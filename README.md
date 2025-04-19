@@ -119,7 +119,7 @@ Il sistema proposto si presta anche ad un utilizzo futuro in diversi contesti:
 
 ## Licenza
 
-Questo progetto e i dati simulati sono distribuiti con licenza MIT. I dati non rappresentano eventi reali, ma scenari generati a scopo di ricerca e sviluppo.
+Questo progetto e i dati simulati sono distribuiti con licenza MIT. I dati anche se REALI non rappresentano eventi reali, ma scenari generati a scopo di ricerca e sviluppo.
 
 > Progetto di Pippo Messina - HelpSoftware
 
