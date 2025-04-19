@@ -1,5 +1,3 @@
-# Relazione descrittiva
-
 ## Premessa
 
 Durante il periodo di osservazione, sono stati raccolti e generati dati che hanno costituito un dataset di notevoli dimensioni. Il veicolo dotato di sistema di monitoraggio ha effettuato regolarmente tre registrazioni settimanali lungo il tragitto della tangenziale BreBeMi. 
