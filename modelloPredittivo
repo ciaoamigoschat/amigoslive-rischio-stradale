@@ -1,0 +1,54 @@
+# Modello Predittivo per la Previsione di Incidenti Stradali
+
+## Introduzione
+
+Questo documento descrive un modello predittivo sviluppato per stimare la probabilità di incidenti stradali su tratti urbani e autostradali, partendo da dati reali e simulati raccolti attraverso un veicolo attrezzato. Il modello si ispira alle metodologie del progetto TAP – Traffic Accident Prediction, adattandole al contesto italiano.
+
+## Obiettivi
+
+- Stimare la probabilità di incidente in base a orario, condizioni stradali e comportamenti alla guida.
+- Identificare i tratti più a rischio della rete stradale osservata.
+- Fornire un supporto decisionale alle autorità locali e agli sviluppatori di soluzioni smart mobility.
+
+## Dataset di Input
+
+Il modello si basa su un dataset composto da:
+- Dati GPS raccolti ogni 30 secondi su tragitti settimanali lungo la BreBeMi
+- Rilevazioni di eventi critici (frenate brusche, cambi corsia)
+- Rilevamento di segnaletica ignorata (STOP, precedenze)
+- Orario e giorno della settimana
+- Stima della guida distratta o alterata (percentuali simulate)
+
+## Architettura del Modello
+
+- **Input Layer**: codifica geografica + oraria + variabili comportamentali
+- **Feature Engineering**: costruzione di indici di rischio per tratto stradale
+- **Modello principale**: Random Forest o XGBoost con validazione incrociata
+- **Output**: probabilità incidente (0–1), classificazione del rischio (basso, medio, alto)
+
+## Processo di Addestramento
+
+1. Pulizia e normalizzazione dei dati
+2. Suddivisione del dataset in train/test (80/20)
+3. Addestramento con 5-fold cross-validation
+4. Ottimizzazione degli iperparametri
+5. Valutazione tramite AUC, precision, recall
+
+## Visualizzazione dei Risultati
+
+- Heatmap dei tratti più a rischio
+- Grafico temporale delle probabilità di incidente
+- Classificazione rischio per fascia oraria e giorno della settimana
+
+## Applicazioni Future
+
+- Integrazione in app di navigazione predittiva
+- Segnalazione in tempo reale alle forze dell’ordine o al gestore stradale
+- Addestramento di sistemi di guida autonoma su tracciati realistici
+- Simulazioni urbane per pianificazione della viabilità
+
+## Licenza e Autore
+
+MIT License – Tutti i dati utilizzati sono simulati o anonimizzati a fini di ricerca.  
+Autore: Pippo Messina – HelpSoftware
+
