@@ -1,0 +1,70 @@
+# Studio Simulato: Previsione del Rischio di Tamponamento
+
+## Premessa
+
+A partire dal 2020 è stato avviato un progetto sperimentale per lo studio del comportamento stradale, utilizzando un veicolo dotato di app mobile e dispositivi di rilevamento. Con l'avvento dell'iPhone, dotato di fotocamere avanzate e sensori di movimento, è stato possibile estendere l'analisi al **rischio di tamponamento**.
+
+L'obiettivo è quello di **identificare le condizioni in cui un veicolo che segue potrebbe causare un impatto posteriore**, elaborando dati in tempo reale e simulando scenari pericolosi.
+
+---
+
+## Obiettivi
+
+- Simulare situazioni in cui un veicolo posteriore si avvicina troppo rapidamente.
+- Stimare la probabilità di tamponamento utilizzando variabili semplici ma significative.
+- Valutare la possibilità di realizzare un sistema di allarme in tempo reale tramite iPhone.
+
+---
+
+## Variabili Rilevanti Simulate
+
+- **Distanza dal veicolo posteriore** (stimata da camera posteriore)
+- **Velocità relativa** (tra veicolo osservato e il nostro)
+- **Segnale di frenata del veicolo posteriore** (se rilevabile)
+- **Accelerazione negativa del nostro veicolo** (frenata)
+- **Tempo di avvicinamento stimato (TTA)**
+
+---
+
+## Logica di Previsione Base
+
+È stata implementata una logica a regole per simulare il comportamento:
+
+```python
+def rischio_tamponamento(distanza_m, velocita_rel_kmh, frenata_dietro):
+    if distanza_m < 5 and velocita_rel_kmh > 20 and not frenata_dietro:
+        return "🚨 Rischio elevato di tamponamento"
+    elif distanza_m < 10 and velocita_rel_kmh > 10:
+        return "⚠️ Rischio moderato"
+    else:
+        return "✅ Situazione sicura"
+```
+
+Questa funzione è stata testata su dati simulati raccolti ogni 0.5 secondi per sequenze da 5 a 10 secondi.
+
+---
+
+## Integrazione con iPhone 15
+
+- **Camera posteriore ultra-wide** usata come input per analisi visiva
+- Possibile uso di CoreML o MLKit per:
+  - Stima della distanza tramite bounding box
+  - Riconoscimento della frenata (luce stop)
+- Integrazione con haptics e audio per avvisi diretti
+
+---
+
+## Applicazioni Future
+
+- Realizzazione di un'app nativa iOS con allarme predittivo
+- Raccolta dati reali per addestrare modelli più accurati (LSTM + visione)
+- Integrazione con Apple CarPlay per estensione su schermo veicolo
+
+---
+
+## Conclusioni
+
+Il progetto dimostra che, anche senza sensori avanzati, è possibile **prevedere il rischio di tamponamento** usando esclusivamente i sensori e la fotocamera dell’iPhone 15. L’utilizzo combinato di visione artificiale e logiche predittive semplici consente già oggi di costruire una base utile per sistemi ADAS alternativi e facilmente accessibili.
+
+> Progetto a cura di Pippo Messina – HelpSoftware
+
