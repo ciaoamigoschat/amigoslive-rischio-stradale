@@ -1,0 +1,61 @@
+# Studio Simulato: Previsione del Comportamento del Veicolo Anteriore
+
+## Premessa
+
+Dal 2020 è stato avviato un progetto di raccolta dati tramite veicolo attrezzato, con registrazioni settimanali lungo tratti urbani e autostradali, principalmente la BreBeMi. I dispositivi montati sul veicolo (GPS, smartphone e app mobile) hanno consentito di accumulare migliaia di ore di osservazioni, utili a simulare scenari realistici.
+
+Questo documento illustra un'estensione sperimentale basata su dati simulati, con l'obiettivo di **anticipare il comportamento del veicolo immediatamente anteriore** durante la guida in contesti urbani e autostradali. Il sistema parte dai dati raccolti in un veicolo dotato di app mobile, GPS e dispositivi di osservazione, e si ispira a tecniche di predizione comportamentale.
+
+Questo documento illustra un progetto sperimentale basato su dati simulati, con l'obiettivo di **anticipare il comportamento del veicolo immediatamente anteriore** durante la guida in contesti urbani e autostradali. Il sistema parte dai dati raccolti in un veicolo dotato di app mobile, GPS e dispositivi di osservazione, e si ispira a tecniche di predizione comportamentale.
+
+## Obiettivo
+
+- Simulare l'acquisizione dati da una dashcam frontale per estrarre il movimento e la posizione relativa del veicolo davanti.
+- Analizzare sequenze di dati per costruire un modello predittivo capace di identificare:
+  - Rallentamenti imminenti,
+  - Cambi di corsia,
+  - Frenate improvvise,
+  - Comportamenti potenzialmente pericolosi.
+
+## Fonti di Dati Simulati
+
+- Frequenza rilevamento: ogni 0.5 secondi (dashcam e GPS)
+- Variabili simulate:
+  - Distanza relativa [m]
+  - Velocità relativa [km/h]
+  - Traiettoria (costante, instabile, deviazione)
+  - Frenata imminente (booleano)
+  - Blinker attivo (sinistra/destra/nessuno)
+  - Tempo di reazione stimato [ms]
+
+## Architettura del Modello Predittivo
+
+- **Input**: sequenza temporale di 10 secondi di osservazione (~20 frame)
+- **Feature Extraction**: analisi della velocità/distanza/traiettoria
+- **Modello**: LSTM (Long Short-Term Memory) per serie temporali
+- **Output**:
+  - Classe predetta: frenata / cambio corsia / mantenimento corsia
+  - Probabilità associata
+
+## Esempio di Scenario Simulato
+
+| Tempo (s) | Distanza (m) | V_rel (km/h) | Blinker | Classe Prevista |
+|-----------|--------------|--------------|---------|------------------|
+| 0.0       | 20           | -5           | nessuno | mantenimento     |
+| 2.5       | 15           | -10          | destra  | cambio corsia    |
+| 5.0       | 10           | -15          | destra  | cambio corsia    |
+| 7.5       | 6            | -18          | destra  | frenata          |
+| 10.0      | 3            | -22          | nessuno | frenata          |
+
+## Applicazioni Futuro
+
+- **Sistemi ADAS (assistenza alla guida)** per prevenzione collisioni
+- **Dashboard predittive** per conducenti umani (alert sonori/visivi)
+- **Supporto alla guida autonoma** in ambienti misti (traffico reale)
+
+## Considerazioni Finali
+
+Sebbene i dati siano simulati, questa architettura rappresenta un passo iniziale per lo sviluppo di sistemi capaci di **anticipare il comportamento del veicolo davanti**, aumentando la sicurezza e il comfort nella guida urbana e autostradale.
+
+> Progetto simulato a cura di Pippo Messina – HelpSoftware
+
