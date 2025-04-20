@@ -1,0 +1,39 @@
+Studio e Previsione dei Movimenti Veicolari in Contesto Autostradale
+
+Contesto operativo
+All’interno del progetto AmigosLive, è stato condotto uno studio sul comportamento dinamico dei veicoli in ambito autostradale, con particolare riferimento alla previsione dei cambi di corsia e delle intenzioni di sorpasso.
+
+L’analisi è stata effettuata prevalentemente lungo un tratto di circa 130 km sull’autostrada BreBeMi, selezionata come percorso ideale per:
+-l'elevata regolarità infrastrutturale,
+-la recente costruzione (standard moderni),
+-la maggiore aderenza ai modelli comportamentali stabili rispetto ad autostrade congestionate.
+
+Obiettivo
+L’obiettivo dell’attività è stato quello di sviluppare un modello predittivo dei movimenti veicolari anteriori e posteriori basato su:
+-tracciamento continuo dei veicoli attorno al mezzo di test,
+-rilevamento di segnali anticipatori di cambio corsia o sorpasso,
+-analisi del comportamento in base a fascia oraria, velocità e modello del veicolo osservato.
+
+Metodo
+Durante i viaggi programmati lungo la BreBeMi:
+Le videocamere installate sugli specchietti laterali e frontalmente hanno rilevato le posizioni dei veicoli anteriori e posteriori.
+I dati sono stati confrontati in tempo reale con un modello AI addestrato a riconoscere micro-variazioni nella traiettoria, frequenza di lampeggio, posizione relativa e velocità.
+In base a questi segnali, l’algoritmo ha potuto prevedere il comportamento imminente degli altri veicoli, con una precisione del 91% (margine di errore del 9%).
+
+Risultati principali
+-Veicoli anteriori: il sistema è stato in grado di anticipare i cambi di corsia fino a 2 secondi prima dell’attivazione della freccia, semplicemente osservando piccole deviazioni e l’avvicinamento laterale al limite della corsia.
+-Veicoli posteriori: è stato possibile prevedere le intenzioni di sorpasso in base alla velocità d’avvicinamento, modello del veicolo (alcuni modelli mostrano una tendenza più aggressiva), e orario del giorno (es. fascia 7:00–9:00 più prevedibile).
+
+In base alla marca/modello del veicolo rilevato, sono emerse ricorrenze comportamentali: determinati modelli risultano più “reattivi” o “pazienti”, dati che il sistema ha integrato nel processo di previsione.
+
+Conclusione
+Questo studio ha confermato la possibilità di anticipare i movimenti veicolari tramite una combinazione di:
+-analisi visiva AI,
+-tracciamento GPS,
+-incrocio con informazioni temporali e dinamiche.
+
+Tali previsioni potranno in futuro:
+-essere integrate in sistemi di avviso al conducente,
+-contribuire a migliorare la sicurezza stradale in contesti urbani e autostradali,
+-offrire una base dati concreta per enti pubblici e produttori automotive interessati allo sviluppo di veicoli semi-autonomi o assistiti.
+
