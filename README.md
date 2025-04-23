@@ -10,7 +10,7 @@ Ogni sessione ha previsto la cattura dei dati GPS a intervalli di 30 secondi, ga
 - rilevare frenate, cambi corsia e infrazioni,
 - mappare dinamicamente le condizioni del traffico urbano e autostradale.
 
-L'obiettivo principale è quello di simulare scenari realistici di rischio stradale, con l'intento di produrre dati utili anche per applicazioni in ambito di:
+L'obiettivo principale è quello di analizzare scenari realistici di rischio stradale, con l'intento di produrre dati utili anche per applicazioni in ambito di:
 - previsione del traffico urbano,
 - analisi preventiva dei punti critici sulla rete stradale,
 - studio comportamentale degli utenti della strada in relazione alla segnaletica esistente.
@@ -27,16 +27,11 @@ L'obiettivo principale è quello di simulare scenari realistici di rischio strad
 
 ## Obiettivo
 
-Analizzare, tramite dati simulati, il comportamento dei veicoli e l'incidenza di eventi critici e incidenti stradali in tre momenti della settimana ritenuti strategici:
+Analizzare, tramite dati reali, il comportamento dei veicoli e l'incidenza di eventi critici e incidenti stradali in tre momenti della settimana ritenuti strategici:
 Le ore di punta del mattino nei giorni feriali (07:00–09:30)
 La fascia pre-serale nei giorni feriali (18:00–20:00)
 Il sabato sera in contesto urbano (22:00–01:00)
 Lo scopo è comprendere come la densità del traffico e il comportamento dei conducenti influenzino il rischio stradale, per poi fornire raccomandazioni strategiche in ambito di sicurezza.
-Analizzare, tramite dati simulati, il comportamento dei veicoli e l'incidenza di eventi critici e incidenti stradali in due momenti della settimana ritenuti strategici:
-Le ore di punta del mattino nei giorni feriali (07:00–09:30)
-Il sabato sera in contesto urbano (22:00–01:00)
-Lo scopo è comprendere come la densità del traffico e il comportamento dei conducenti influenzino il rischio stradale, per poi fornire raccomandazioni strategiche in ambito di sicurezza.
-
 
 ---
 
@@ -54,7 +49,7 @@ Le simulazioni sono basate su:
 
 ---
 
-## Sintesi dei dati simulati
+## Sintesi dei dati analizzati
 
 | Indicatore                         | Mattino (feriale) | Sabato Sera |
 |------------------------------------|-------------------|-------------|
