@@ -1,0 +1,32 @@
+Relazione tecnica: Evoluzione avanzata del progetto Volvo-DataX
+
+Introduzione
+
+Il progetto Volvo-DataX, sviluppato in collaborazione tra Volvo Cars, UC Berkeley e Chalmers University, ha rappresentato un punto di partenza significativo nel campo della rilevazione e classificazione delle intenzioni dei pedoni. 
+Utilizzando tecnologie come YOLOv3, SORT e ST-DenseNet, il progetto ha fornito una base solida per l'analisi del comportamento dei pedoni in contesti urbani.​
+
+Obiettivi dell'evoluzione
+
+Il nostro team si propone di avanzare il progetto Volvo-DataX attraverso i seguenti obiettivi:​
+Integrazione di tecnologie avanzate: Implementare modelli di deep learning più recenti e accurati per migliorare la rilevazione e la classificazione delle intenzioni dei pedoni.​
+Espansione del dataset: Ampliare il dataset esistente con nuove raccolte di dati in diverse condizioni ambientali e culturali per aumentare la robustezza del modello.​
+Ottimizzazione delle prestazioni: Migliorare l'efficienza computazionale del sistema per consentire l'implementazione in tempo reale su veicoli autonomi.​
+
+Metodologia
+
+Per raggiungere gli obiettivi sopra descritti, adotteremo la seguente metodologia:​
+Revisione e aggiornamento del modello: Analizzeremo l'architettura esistente del progetto Volvo-DataX e identificheremo le aree che necessitano di aggiornamenti tecnologici.​
+Raccolta e annotazione dei dati: Utilizzeremo sensori avanzati e tecniche di annotazione semi-automatica per raccogliere e etichettare nuovi dati pertinenti.​Addestramento e validazione: Addestreremo i nuovi modelli utilizzando tecniche di cross-validation per garantire l'accuratezza e la generalizzabilità.​
+Implementazione e test: Integreremo il sistema aggiornato in un ambiente di test simulato per valutare le prestazioni in scenari realistici.​
+
+Risultati attesi
+Ci aspettiamo che l'evoluzione del progetto Volvo-DataX porti a:​
+Un aumento significativo dell'accuratezza nella rilevazione e classificazione delle intenzioni dei pedoni.​
+Una maggiore robustezza del sistema in diverse condizioni ambientali.​
+Una riduzione del tempo di elaborazione, consentendo l'implementazione in tempo reale.​
+
+Conclusione
+L'evoluzione del progetto Volvo-DataX rappresenta un passo importante verso lo sviluppo di veicoli autonomi più sicuri e intelligenti. 
+Attraverso l'integrazione di tecnologie avanzate e l'espansione del dataset, miriamo a migliorare significativamente le capacità di percezione e decisione dei veicoli autonomi in ambienti complessi.​
+
+Per ulteriori dettagli e aggiornamenti sul progetto, è possibile consultare il repository ufficiale: https://github.com/mjpramirez/Volvo-DataX?tab=readme-ov-file
