@@ -67,7 +67,7 @@ Utilizzando le coordinate geografiche (latitudine e longitudine) sono state gene
 ### Esempio di Utilizzo del Modello
 Per prevedere la gravità di un incidente, si può fornire un set di caratteristiche al modello addestrato:
 
-```python
+
 input_data = np.array([
     1,              # Presenza della polizia
     3.5,            # Log età conducente (es. 33 anni)
@@ -84,7 +84,7 @@ input_data = np.array([
 
 prediction = loaded_model.predict(input_data)
 print("Gravità prevista:", prediction[0])
-```
+
 
 Output atteso: `3` (incidente lieve)
 
