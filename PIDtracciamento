@@ -1,0 +1,24 @@
+**Relazione tecnica: Applicazione del controllore PID nel tracciamento della traiettoria di veicoli**
+
+Nel contesto dell'automazione e della robotica mobile, uno dei problemi più rilevanti è garantire che un veicolo segua una traiettoria desiderata in modo stabile, preciso e reattivo. Questo documento espone un'analisi sull'utilizzo del controllore PID (Proporzionale-Integrale-Derivativo) per affrontare questa sfida, illustrando struttura, funzionalità e vantaggi di questa tecnica.
+
+Il progetto ha come obiettivo lo sviluppo di un sistema di controllo capace di guidare un veicolo lungo un percorso predefinito. Tale veicolo può essere un'auto autonoma, un robot terrestre, un drone o un semplice veicolo simulato. La tecnica del PID si presta molto bene a questa esigenza, in quanto consente di correggere dinamicamente la rotta del mezzo a partire dalla deviazione rilevata rispetto alla traiettoria target.
+
+Il sistema è composto da tre elementi principali: i sensori (che rilevano la posizione e l'orientamento del veicolo), gli attuatori (che influenzano sterzo e velocità), e infine l'algoritmo PID, cuore del controllo. I tre parametri fondamentali del PID sono:
+
+- **Kp (guadagno proporzionale)**, responsabile della correzione immediata dell'errore;
+- **Ki (guadagno integrale)**, utile a compensare errori sistematici che si accumulano nel tempo;
+- **Kd (guadagno derivativo)**, che reagisce alla variazione dell'errore e contribuisce a prevenirne l'amplificazione.
+
+Il funzionamento del sistema prevede che venga costantemente calcolato l'errore laterale tra la posizione attuale del veicolo e la traiettoria da seguire. Il controllore PID, sulla base di questo errore, genera un angolo di sterzata ottimale. In parallelo, un ulteriore PID può regolare la velocità del veicolo, garantendo una marcia fluida anche in presenza di curve strette o ostacoli.
+
+Le fasi operative del progetto sono ben definite: si parte dall'analisi della traiettoria, si passa alla modellazione dell'ambiente, si implementa l'algoritmo PID, si effettua il tuning dei parametri attraverso simulazioni e si convalida il sistema su percorsi più complessi. Tutto ciò può essere realizzato in ambienti di sviluppo come Python, MATLAB o C++, a seconda delle esigenze applicative.
+
+Per valutare l'efficacia del sistema, si considerano metriche come la deviazione media dalla traiettoria, il tempo di risposta ai cambi di direzione, la stabilità del sistema e l'entità dell'overshoot. Tali indicatori permettono di verificare se il sistema rispetta i requisiti di prestazione.
+
+Tra i principali vantaggi dell'approccio PID troviamo la semplicità implementativa, la solidità in situazioni reali e la sua capacità di adattarsi facilmente a scenari diversi. Tuttavia, è importante sottolineare che il tuning dei parametri richiede attenzione, e che il PID, pur essendo robusto, non sempre è sufficiente in contesti altamente non lineari o dinamici, dove può essere utile integrare tecniche più sofisticate come il controllo predittivo (MPC) o l'apprendimento automatico.
+
+In prospettiva futura, il sistema PID potrebbe essere potenziato con algoritmi di auto-tuning dei parametri, o esteso a veicoli operanti in spazi tridimensionali, come droni o robot sottomarini. Queste estensioni permetterebbero di ampliare notevolmente l'applicabilità del metodo, mantenendone inalterata la filosofia basata sulla regolazione reattiva dell'errore.
+
+In conclusione, il controllore PID rappresenta uno strumento potente e versatile per il controllo del movimento dei veicoli. La sua adozione nel tracciamento della traiettoria si dimostra una soluzione efficace, soprattutto nei contesti in cui precisione e stabilità risultano prioritari.
+
