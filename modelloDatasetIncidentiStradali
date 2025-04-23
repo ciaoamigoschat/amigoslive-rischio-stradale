@@ -1,0 +1,105 @@
+### Obiettivo del progetto
+Analizzare i dati sugli incidenti stradali nel Nord Italia dal 2020 ad oggi per:
+- Identificare le zone e i momenti più a rischio
+- Capire le caratteristiche comuni degli incidenti
+- Prevedere la gravità di un incidente usando algoritmi di machine learning
+
+---
+
+### Dataset Utilizzati
+I dati utilizzati per l'analisi sono stati catturati in tempo reale da fonti ufficiali e aggiornati regolarmente. Le informazioni comprendono:
+
+-Dati sugli incidenti con coordinate geografiche
+-Dati relativi ai veicoli coinvolti
+-Informazioni sulle vittime
+-Tutti i file sono stati combinati tramite l'identificativo Accident_Index.
+-Tutti i file sono stati combinati tramite l'identificativo `Accident_Index`.
+
+---
+
+### Preprocessing e Pulizia
+- Conversione di data e ora in formato `DateTime`
+- Rimozione dei valori `-1` e dei `NaN`
+- Normalizzazione di variabili come l'età del conducente e del veicolo (tramite `np.log`)
+
+---
+
+### Analisi Esplorativa
+- **Giorni più a rischio**: il giovedì risulta essere il giorno con più incidenti
+- **Fasce orarie critiche**: picco nel primo pomeriggio (uscita dal lavoro)
+- **Età dei conducenti**: maggioranza tra 25 e 35 anni
+- **Zone a rischio**: limiti di velocità a 30 mph mostrano più incidenti
+
+---
+
+### Visualizzazione Geografica
+Utilizzando le coordinate geografiche (latitudine e longitudine) sono state generate **heatmap su Google Maps**, che evidenziano come i casi più gravi avvengano soprattutto in **centri urbani**.
+
+---
+
+### Modello di Machine Learning Utilizzato: Random Forest
+
+**Obiettivo**: Prevedere la gravità dell'incidente (classe 1: grave, 2: serio, 3: lieve).
+
+**Features selezionate**:
+- Età del conducente (log)
+- Età del veicolo (log)
+- Giorno della settimana
+- Tipo di veicolo
+- Condizioni stradali e meteo
+- Presenza della polizia sul luogo dell'incidente
+
+**Suddivisione del dataset**:
+- 80% training, 20% test
+
+**Risultati del modello Random Forest**:
+- Accuracy: **88.97%**
+- Precisione elevata nella previsione di incidenti **lievi**
+- Difficoltà nel prevedere classi più rare (gravi o seri)
+
+**Feature Importance** (più predittive):
+- Età del conducente
+- Età del veicolo
+- Tipo di veicolo
+
+---
+
+### Esempio di Utilizzo del Modello
+Per prevedere la gravità di un incidente, si può fornire un set di caratteristiche al modello addestrato:
+
+```python
+input_data = np.array([
+    1,              # Presenza della polizia
+    3.5,            # Log età conducente (es. 33 anni)
+    9.0,            # Tipo veicolo
+    2.0,            # Log età veicolo (es. 7 anni)
+    1600.0,         # Cilindrata
+    4,              # Giorno della settimana (es. Giovedì)
+    1,              # Meteo buono
+    1,              # Strada asciutta
+    1,              # Luce diurna
+    1.0,            # Sesso conducente: maschio
+    30              # Limite di velocità
+]).reshape(1, -1)
+
+prediction = loaded_model.predict(input_data)
+print("Gravità prevista:", prediction[0])
+```
+
+Output atteso: `3` (incidente lieve)
+
+Questo approccio può essere integrato in un sistema in tempo reale per supportare le decisioni delle autorità in fase di pianificazione o emergenza.
+
+---
+
+### Conclusione
+Il progetto ha evidenziato:
+- L'utilità dell'analisi esplorativa per identificare pattern nei dati sugli incidenti
+- Le zone urbane sono più soggette ad incidenti gravi
+- Il modello **Random Forest** si è dimostrato il più performante
+
+**Possibili sviluppi futuri**:
+- Ottimizzazione degli algoritmi tramite hyperparameter tuning
+- Integrazione con sistemi GIS per interventi urbani
+- Realizzazione di una dashboard interattiva per le forze dell'ordine
+
